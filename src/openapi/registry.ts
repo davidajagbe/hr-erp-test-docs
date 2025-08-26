@@ -11,9 +11,10 @@ export const guarantorSchema = z.object({
   address: z.string(),
   relationship: z.string(),
   filledAt: z.string().datetime().optional(),
-});
+}).openapi('Guarantor');
 
-export const guarantorInvitationSchema = z.object({
+export const guarantorInvitationSchema = z
+  .object({
   applicant: z.string(),
   email: z.string().email(),
   token: z.string(),
@@ -21,7 +22,7 @@ export const guarantorInvitationSchema = z.object({
   status: z.enum(["pending", "completed", "expired"]),
   sentAt: z.string().datetime(),
   completedAt: z.string().datetime().optional(),
-});
+}).openapi('GuarantorInvitation');
 // Extend Zod with OpenAPI support (call once in your entrypoint)
 
 export { z };
@@ -82,7 +83,6 @@ registry.registerPath({
   path: '/guarantors/submit-form',
   summary: 'Submit a guarantor form',
   request: {
-    query: z.object({ token: z.string() }),
     body: {
       content: {
         'application/json': {
@@ -183,6 +183,6 @@ export const generateOpenApiDoc = () => {
       title: 'HR-ERP API',
       description: 'This is the API',
     },
-    servers: [{ url: '/api' }], // Set to match your API base path
+  servers: [{ url: '/' }], // Set to root to avoid double /api/api
   });
 }
