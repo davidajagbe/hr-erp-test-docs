@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import {generateOpenApiDoc}  from './openapi/registry.ts';
 import swaggerUi from 'swagger-ui-express';
 import router from './routes/userRoutes.ts';
+import guarantorRouter from './guarantor/guarantor.routes.ts';
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 
@@ -29,5 +30,6 @@ app.get('/api-docs/swagger.json', (req, res) => {
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(undefined, { swaggerUrl: '/api-docs/swagger.json' }));
 
 app.use('/api/users', router);
+app.use('/guarontos', guarantorRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`));

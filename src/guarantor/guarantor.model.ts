@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import type {
   GuarantorInterface,
   GuarantorInvitationInterface,
-} from "./guarantor.interface";
+} from "./guarantor.interface.ts";
 
 const guarantorSchema = new Schema<GuarantorInterface>({
   applicant: {

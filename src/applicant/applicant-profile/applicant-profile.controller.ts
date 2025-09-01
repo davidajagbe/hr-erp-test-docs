@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import type { UploadedFile } from "express-fileupload";
-import { env } from "../../../config/env.config.js";
+import { env } from "../../config/env.config.js";
 import type { AuthenticatedApplicant } from "../applicant.interface.js";
 import { ApplicantProfileService } from "./applicant-profile.service.js";
 

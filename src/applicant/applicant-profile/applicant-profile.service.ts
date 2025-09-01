@@ -1,5 +1,5 @@
 import type { UploadedFile } from "express-fileupload";
-import { generateToken } from "../../../config/token";
+import { generateToken } from "../../config/token";
 import { mailService } from "../../../services/mail.service";
 import { ApiError, ApiSuccess } from "../../../utils/response-handler";
 import { comparePassword, hashPassword } from "../../../utils/validationUtils";

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { GuarantorController } from "./guarantor.controller";
+import { GuarantorController } from "./guarantor.controller.ts";
 
 const guarantorRouter = Router();
 

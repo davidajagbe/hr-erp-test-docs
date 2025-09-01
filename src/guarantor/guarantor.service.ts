@@ -1,11 +1,11 @@
-import type { GuarantorInterface } from "./guarantor.interface";
-import { Guarantor, GuarantorInvitation } from "./guarantor.model";
+import type { GuarantorInterface } from "./guarantor.interface.ts";
+import { Guarantor, GuarantorInvitation } from "./guarantor.model.ts";
 import type { IQueryParams } from "../../shared/interfaces/query.interface";
-import { paginate } from "../../utils/paginate";
-import { ApiError, ApiSuccess } from "../../utils/response-handler";
-import { env } from "../../config/env.config";
-import { generateToken, verifyToken } from "../../config/token";
-import Applicant from "../applicant/applicant.model";
+import { paginate } from "../utils/paginate";
+import { ApiError, ApiSuccess } from "../utils/response-handler";
+import { env } from "../config/env.config.ts";
+// import { generateToken, verifyToken } from "../config/token.ts";
+import Applicant from "../applicant/applicant.model.ts";
 
 export class GuarantorService {
   static async getAllGuarantors(query: IQueryParams) {

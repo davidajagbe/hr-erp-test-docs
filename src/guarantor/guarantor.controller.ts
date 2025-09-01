@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
-import { GuarantorService } from "./guarantor.service";
-import type { AuthenticatedApplicant } from "../applicant/applicant.interface";
+import { GuarantorService } from "./guarantor.service.ts";
+import type { AuthenticatedApplicant } from "../applicant/applicant.interface.ts";
 
 export class GuarantorController {
   //Get Guarantors
