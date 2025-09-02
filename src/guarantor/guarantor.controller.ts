@@ -25,7 +25,7 @@ export class GuarantorController {
   }
 
   static async sendInvite(req: Request, res: Response) {
-    const { applicantId } = req.applicant as AuthenticatedApplicant;
+    const applicantId  ="applicant";
     const { email } = req.body;
     const response = await GuarantorService.sendInvite(applicantId, email);
     res.status(response.status_code).json(response);

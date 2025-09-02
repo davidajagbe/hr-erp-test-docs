@@ -1,9 +1,9 @@
 import type { GuarantorInterface } from "./guarantor.interface.ts";
 import { Guarantor, GuarantorInvitation } from "./guarantor.model.ts";
-import type { IQueryParams } from "../../shared/interfaces/query.interface";
-import { paginate } from "../utils/paginate";
-import { ApiError, ApiSuccess } from "../utils/response-handler";
-import { env } from "../config/env.config.ts";
+// import type { IQueryParams } from "../../shared/interfaces/query.interface";
+import { paginate } from "../utils/paginate.ts";
+import { ApiError, ApiSuccess } from "../utils/response-handler.ts";
+// import { env } from "../config/env.config.ts";
 // import { generateToken, verifyToken } from "../config/token.ts";
 import Applicant from "../applicant/applicant.model.ts";
 
@@ -56,8 +56,8 @@ export class GuarantorService {
       throw ApiError.badRequest("Maximum number of guarantors reached");
     }
 
-    const token = generateToken({ applicantId, email });
-    const link = `${env.ADMIN_EMAIL}/guarantor-form?token=${token}`;
+    const token = "generateToken";
+    const link = `token`;
 
     // Change later
     const guarantorInvitation = GuarantorInvitation.create({
